@@ -1,13 +1,30 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Cedarville+Cursive&family=Libre+Franklin:wght@200&family=Roboto:wght@300&display=swap");
+
+@import "tailwindcss/base";
+
+@import "tailwindcss/components";
+
+@import "tailwindcss/utilities";
+
+@layer components {
+  .active {
+    @apply no-underline text-highlight2 dark:text-highlight;
+  }
+  .inactive {
+    @apply no-underline text-fontColor2 dark:text-fontColor;
+  }
+  .navitems {
+    @apply cursor-pointer transition-all hover:text-highlight2 dark:hover:text-highlight;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+/* @layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none; 
+    scrollbar-width: none;
+  }
+} */
