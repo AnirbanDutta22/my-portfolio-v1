@@ -28,7 +28,7 @@ export default function Contact() {
         </button>
       </form>
 
-      <Title title="contact." />
+      <Title title="contact." left="left-44" />
     </>
   );
 }

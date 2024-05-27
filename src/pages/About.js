@@ -1,9 +1,8 @@
-import EducationSection, {
-  ExperienceSection,
-} from "../components/ExperienceSection";
+import TimelineSection from "../components/ExperienceSection";
 import PageTitle from "../components/PageTitle";
 import SkillsSection from "../components/SkillsSection";
 import Title from "../components/Title";
+import { education, experience } from "../constants";
 import { useHeadingAnimation } from "../hooks/usePageAnimation";
 
 export default function About() {
@@ -12,11 +11,11 @@ export default function About() {
     <>
       <PageTitle text1="about" text2="me" ref={headRef} />
       <div className="mt-10 w-full">
-        <ExperienceSection />
+        <TimelineSection data={experience} title="experience" />
         <SkillsSection />
-        <EducationSection />
+        <TimelineSection data={education} title="education" />
       </div>
-      <Title title="about." />
+      <Title title="about." left="left-52" />
     </>
   );
 }

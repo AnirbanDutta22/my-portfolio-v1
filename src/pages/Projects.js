@@ -20,7 +20,7 @@ export default function Projects() {
         </select>
         <div className="w-full mt-5">updating soon... !</div>
       </div>
-      <Title title="projects." />
+      <Title title="projects." left="left-44" />
     </>
   );
 }

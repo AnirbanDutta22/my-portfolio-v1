@@ -14,19 +14,19 @@ export default function HomeContent() {
 
   return (
     <>
-      <h1 className="text-xl md:text-3xl lg:text-4xl" ref={ref1}>
+      <h1 className="text-2xl sm:text-3xl lg:text-5xl" ref={ref1}>
         hello ! me{" "}
         <span className="text-highlight2 dark:text-highlight">
           anirbanDutta
         </span>
       </h1>
       <p ref={ref2}>
-        <span className="mt-2 text-3xl md:text-5xl lg:text-6xl">
+        <span className="mt-2 text-4xl md:text-6xl lg:text-7xl">
           I create things for the web
         </span>
       </p>
       <p
-        className="mt-10 w-full md:w-3/4 lg:w-full text-base md:text-lg"
+        className="mt-10 w-full md:w-3/4 lg:w-full text-lg md:text-xl"
         ref={ref3}
       >
         I'm a passionate and driven college student with keen interest in
@@ -34,25 +34,20 @@ export default function HomeContent() {
         working on React.js based projects. I've a good foundation in
         Javascript, HTML, CSS, SASS, Tailwind CSS, Bootstrap etc.
       </p>
-      <p className="mt-8 text-base md:text-lg">
+      <p className="mt-8 text-md md:text-lg">
         <span className="">Have a look on my resume </span>
         <NavLink to={resume} target="_blank">
-          <i className="fa-solid fa-arrow-right"></i>
+          <i className="fa-solid fa-arrow-right" title="resume_link"></i>
         </NavLink>
       </p>
-      <div className="flex justify-start text-2xl mt-20">
+      <div className="flex justify-start text-2xl mt-14">
         <div>
           <Link
             target="_blank"
             to="https://www.linkedin.com/in/anirban-dutta-a1044524a"
             className="decoration-none"
           >
-            <i
-              data-tooltip-id="tooltipid"
-              data-tooltip-content="linkedin"
-              className="fa-brands fa-linkedin"
-            ></i>
-            <Tooltip id="tooltipid" />
+            <i className="fa-brands fa-linkedin" title="Linkedin"></i>
           </Link>
         </div>
         <div className="ml-20">
@@ -61,11 +56,7 @@ export default function HomeContent() {
             to="https://www.twitter.com/aniduttacodes"
             className="decoration-none"
           >
-            <i
-              className="fa-brands fa-x-twitter"
-              data-tooltip-id="tooltipid2"
-              data-tooltip-content="X"
-            ></i>
+            <i className="fa-brands fa-x-twitter" title="X"></i>
             <Tooltip id="tooltipid2" />
           </Link>
         </div>
@@ -75,16 +66,12 @@ export default function HomeContent() {
             to="https://www.github.com/AnirbanDutta22"
             className="decoration-none"
           >
-            <i
-              className="fa-brands fa-github"
-              data-tooltip-id="tooltipid3"
-              data-tooltip-content="GitHub"
-            ></i>
+            <i className="fa-brands fa-github" title="GitHub"></i>
             <Tooltip id="tooltipid3" />
           </Link>
         </div>
       </div>
-      <Title title="aD." />
+      <Title title="aD." left="left-60" />
     </>
   );
 }

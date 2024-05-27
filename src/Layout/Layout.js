@@ -16,7 +16,10 @@ export default function Layout({ children }) {
   };
 
   const closeMenu = () => {
-    setOpen((prev) => !prev);
+    if (window.innerWidth < 768) {
+      setOpen((prev) => !prev);
+    }
+    console.log(window.innerWidth);
   };
 
   return (
@@ -46,6 +49,7 @@ export default function Layout({ children }) {
                 className={({ isActive }) =>
                   `${isActive ? "active" : "inactive"}`
                 }
+                onClick={closeMenu}
               >
                 <span className="navitems">about</span>
               </NavLink>
@@ -56,6 +60,7 @@ export default function Layout({ children }) {
                 className={({ isActive }) =>
                   `${isActive ? "active" : "inactive"}`
                 }
+                onClick={closeMenu}
               >
                 <span className="navitems">works</span>
               </NavLink>
@@ -66,6 +71,7 @@ export default function Layout({ children }) {
                 className={({ isActive }) =>
                   `${isActive ? "active" : "inactive"}`
                 }
+                onClick={closeMenu}
               >
                 <span className="navitems">contact</span>
               </NavLink>

@@ -14,7 +14,7 @@ module.exports = {
       colors: {
         fontColor: "#f4eee0",
         bgColor: "#000",
-        bgColorLight: "rgba(57, 54, 70, 0.678)",
+        bgColorLight: "rgba(57, 54, 70, 0.1)",
         titleColor: "rgba(57, 54, 70, 0.300)",
         highlight: "#f8e559",
         fontColor2: "#000",

@@ -55,7 +55,7 @@ const useSectionAnimation = () => {
   const ref1 = useRef(null);
 
   useEffect(() => {
-    TweenMax.from(ref1.current, 1, { opacity: 0, x: 100 });
+    TweenMax.from(ref1.current, 1, { opacity: 0, y: 100 });
     TweenMax.to(ref1.current, 1, {
       opacity: 1,
       x: 0,
