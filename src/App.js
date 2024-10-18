@@ -1,9 +1,10 @@
 import { Route, BrowserRouter as Router, Routes } from "react-router-dom";
+import "./App.css";
 import Layout from "./Layout/Layout";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import HomeContent from "./pages/HomeContent";
-import Projects from "./pages/Projects";
+import Works from "./pages/Works";
 
 export default function App() {
   return (
@@ -12,7 +13,7 @@ export default function App() {
         <Route exact path="/" element={<Layout />}>
           <Route index path="/" element={<HomeContent />} />
           <Route exact path="/about" element={<About />} />
-          <Route exact path="/projects" element={<Projects />} />
+          <Route exact path="/works" element={<Works />} />
           <Route exact path="/contact" element={<Contact />} />
         </Route>
       </Routes>
