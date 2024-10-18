@@ -1,16 +1,33 @@
-import { Link, NavLink } from "react-router-dom";
+import { useContext, useState } from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 import { Tooltip } from "react-tooltip";
 import "react-tooltip/dist/react-tooltip.css";
 import resume from "../assets/AnirbanDutta_Resume.pdf";
 import Title from "../components/Title";
+import CursorContext from "../context/cursorContext";
 import { usePageAnimation } from "../hooks/usePageAnimation";
 
 export default function HomeContent() {
-  // const heroText = useRef(null);
-  // const heroSpan = useRef(null);
-  // const heroPara = useRef(null);
-
+  const navigate = useNavigate();
   const { ref1, ref2, ref3 } = usePageAnimation();
+  const { setMouseVariant } = useContext(CursorContext);
+
+  const [hoveredSpan, setHoveredSpan] = useState(null);
+
+  const cursorEnter = (span) => {
+    setMouseVariant("textLg");
+    setHoveredSpan(span);
+  };
+
+  const cursorExit = () => {
+    setMouseVariant("default");
+    setHoveredSpan(null);
+  };
+
+  const navigateToWork = (route) => {
+    cursorExit();
+    navigate("/works");
+  };
 
   return (
     <>
@@ -20,19 +37,77 @@ export default function HomeContent() {
           anirbanDutta
         </span>
       </h1>
-      <p ref={ref2}>
-        <span className="mt-2 text-4xl md:text-6xl lg:text-7xl">
-          I create things for the web
+      <p ref={ref2} className="mt-2 h-[7rem] md:h-[10rem] lg:h-[8rem] w-full">
+        <span className="text-4xl md:text-6xl lg:text-[4rem]">
+          I create things for the{" "}
+          <span
+            onClick={() => navigateToWork("web-works")}
+            onMouseEnter={() => cursorEnter("web-span")}
+            onMouseLeave={cursorExit}
+          >
+            web
+          </span>{" "}
+          and{" "}
+          <span
+            onClick={() => navigateToWork("mobile-works")}
+            onMouseEnter={() => cursorEnter("mobile-span")}
+            onMouseLeave={cursorExit}
+          >
+            mobile
+          </span>
         </span>
       </p>
+      {/* <p ref={ref2} className="mt-2 h-[8rem] w-full">
+        <span className="text-4xl md:text-6xl lg:text-[4rem]">
+          I create things for the{" "}
+          <span
+            onMouseEnter={() => cursorEnter("web-span")}
+            onMouseLeave={cursorExit}
+            style={{ display: "inline-block", position: "relative" }}
+          >
+            {hoveredSpan === "web-span" ? (
+              <img
+                src={web}
+                alt="web"
+                className="w-20 h-full transition-opacity duration-300 ease-in-out"
+                style={{ height: "1em", verticalAlign: "middle" }}
+              />
+            ) : (
+              <span className="dark:text-fontColor transition-opacity duration-300 ease-in-out">
+                web
+              </span>
+            )}
+          </span>{" "}
+          and{" "}
+          <span
+            onMouseEnter={() => cursorEnter("mobile-span")}
+            onMouseLeave={cursorExit}
+            style={{ display: "inline-block", position: "relative" }}
+          >
+            {hoveredSpan === "mobile-span" ? (
+              <img
+                src={smartphone}
+                alt="mobile"
+                className="w-20 h-full transition-opacity duration-300 ease-in-out"
+                style={{ height: "1em", verticalAlign: "middle" }}
+              />
+            ) : (
+              <span className="dark:text-fontColor transition-opacity duration-300 ease-in-out">
+                mobile
+              </span>
+            )}
+          </span>
+        </span>
+      </p> */}
       <p
-        className="mt-10 w-full md:w-3/4 lg:w-full text-lg md:text-xl"
+        className="mt-2 sm:mt-5 w-full md:w-3/4 lg:w-full text-lg md:text-xl"
         ref={ref3}
       >
-        I'm a passionate and driven college student with keen interest in
-        becoming MERN Developer ! Currently I'm doing Frontend Development and
-        working on React.js based projects. I've a good foundation in
-        Javascript, HTML, CSS, SASS, Tailwind CSS, Bootstrap etc.
+        As a full-stack Web and App developer, I specialize in providing
+        tailored solutions for web and mobile. I focus on building responsive,
+        scalable websites and mobile applications from scratch, covering
+        everything from front-end design to back-end development. I can help
+        bring your ideas to life with efficient, modern tech solutions.
       </p>
       <p className="mt-8 text-md md:text-lg">
         <span className="">Have a look on my resume </span>
