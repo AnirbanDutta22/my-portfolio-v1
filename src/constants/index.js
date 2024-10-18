@@ -13,7 +13,12 @@ const education = [
 ];
 const experience = [
   {
-    time: "May 2024 - Present",
+    time: "Apr 2024 - Present",
+    title: "Member of Tech Wing",
+    details: "Institution's Innovation Council - TMSL",
+  },
+  {
+    time: "May 2024 - July 2024",
     title: "Node.js Intern",
     details: "Celebal Technologies",
     subdetails: "Internship",
@@ -23,11 +28,6 @@ const experience = [
     title: "Web Development Intern",
     details: "Next24tech Technology & Services",
     subdetails: "Internship",
-  },
-  {
-    time: "Apr 2024 - Present",
-    title: "Member of Tech Wing",
-    details: "IIC TMSL",
   },
 ];
 
