@@ -14,7 +14,7 @@
     @apply no-underline text-fontColor2 dark:text-fontColor;
   }
   .navitems {
-    @apply cursor-pointer transition-all hover:text-highlight2 dark:hover:text-highlight;
+    @apply transition-all;
   }
 }
 
@@ -27,4 +27,6 @@
     -ms-overflow-style: none; 
     scrollbar-width: none;
   }
+
+  hover:text-highlight2 dark:hover:text-highlight
 } */
